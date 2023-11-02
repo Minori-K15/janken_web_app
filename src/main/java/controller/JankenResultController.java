@@ -16,9 +16,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class JankenResultController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     
-    	int rock =  Integer.parseInt(request.getParameter('janken'));
-    	int scissors =  Integer.parseInt();
-    	int paper =  Integer.parseInt();
+    	int jankenStatus =  Integer.parseInt(request.getParameter("name"));
+    	System.out.println(jankenStatus);
     
     }
     
