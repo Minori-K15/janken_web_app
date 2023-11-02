@@ -16,5 +16,9 @@
 </head>
 <body>
 <h1>勝負結果</h1>
+     <!-- <p>結果表示</p> -->
+    <p>${name} <strong>さん</strong></p>
+    <p><strong>メールアドレス:</strong> ${email}</p>
+    <p><strong>ご意見・ご感想:</strong><br>${feedback}</p>
 </body>
 </html>

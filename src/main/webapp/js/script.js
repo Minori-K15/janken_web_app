@@ -17,12 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
       if (validateInputs()) {
        // 1つでもfalseがあればボタンが赤くなって送信不可
         	button.disabled = false;
-        	button.style.backgroundColor = '#ff6347';
-        	button.style.color = '#ff6347';
+        	console.log("成功");
         } else {
         // 全てtureであれば送信
           	button.disabled = true;
-          	button.style.backgroundColor = '#FF0000';
         }
     }
     // ボタンの送信結果

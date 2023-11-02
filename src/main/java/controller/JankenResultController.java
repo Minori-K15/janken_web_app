@@ -30,7 +30,7 @@ public class JankenResultController extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // thanks.jsp にリダイレクト
-        String view = "/WEB-INF/views/jamken_result.jsp";
+        String view = "/WEB-INF/views/janken_result.jsp";
         request.getRequestDispatcher(view).forward(request, response);
     }
 }

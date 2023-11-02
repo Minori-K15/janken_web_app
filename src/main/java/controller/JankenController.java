@@ -19,15 +19,15 @@ public class JankenController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // フォームから送信されたデータを取得
-        String name = request.getParameter("name");
-        System.out.println(name);
+//        // フォームから送信されたデータを取得
+//        String name = request.getParameter("name");
+//        System.out.println(name);
+//
+//        // 取得したデータをリクエスト属性として設定
+//        request.setAttribute("name", name);
 
-        // 取得したデータをリクエスト属性として設定
-        request.setAttribute("name", name);
-
-        // confirm.jsp にリダイレクト
-        String view = "/WEB-INF/views/jamken_result.jsp";
+        // janken_result.jsp にリダイレクト
+        String view = "/WEB-INF/views/confirm.jsp";
         request.getRequestDispatcher(view).forward(request, response);
     }
 }

@@ -22,7 +22,7 @@
   <label for="name">お名前:</label>
   <input type="text" id="name" name="name" required><br>
   <!-- タイトル -->
-  <label for="name" id="title">じゃんけん </label><br>
+  <label for="name" id="title">この中から選択してください！ </label><br>
   
   <!-- じゃんけんを1つだけ選択できるようにする -->
   <label for="name">グー</label>
