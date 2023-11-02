@@ -17,7 +17,7 @@
 <body>
   <h1>じゃんけん</h1>
   
-  <form id="jamkenbtn">
+  <form id="jankenbtn">
   <!-- 入力された名前をinput -->
   <label for="name">お名前:</label>
   <input type="text" id="name" name="name" required><br>
@@ -26,11 +26,11 @@
   
   <!-- じゃんけんを1つだけ選択できるようにする -->
   <label for="name">グー</label>
-  <input type="radio" id="rock" name="jamken" value="グー" required><br>
+  <input type="radio" id="rock" name="janken" value="グー" required><br>
   <label for="name">チョキ</label>
-  <input type="radio" id="scissors" name="jamken" value="チョキ" required><br>
+  <input type="radio" id="scissors" name="janken" value="チョキ" required><br>
   <label for="name">パー</label>
-  <input type="radio" id="paper" name="jamken" value="パー" required><br>
+  <input type="radio" id="paper" name="janken" value="パー" required><br>
   
   <!-- 選択したら送信ボタンを表示 -->
   <button type="submit" id="button" name="button">いざ勝負！</button>

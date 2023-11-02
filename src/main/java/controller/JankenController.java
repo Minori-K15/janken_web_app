@@ -11,8 +11,8 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class JamkenControl
  */
-@WebServlet("/Jamken")
-public class JamkenController extends HttpServlet {
+@WebServlet("/Janken")
+public class JankenController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String view = "/WEB-INF/views/jamken.jsp";
         request.getRequestDispatcher(view).forward(request, response);
