@@ -15,8 +15,9 @@
 </head>
 <body>
     <h1>確認画面</h1>
-    <p>${name}さん</p>
-    <p>この内容で勝負してもよろしいですか？</p>
+<%--     <p>${name}さん</p> --%>
+    <p>${name}さん この内容で勝負してもよろしいですか？</p>
+    <p><strong>PC: ${player} 人</strong></p>
     <p><strong>じゃんけん: ${janken}</strong></p>
 
     <form action="confirm" method="post">

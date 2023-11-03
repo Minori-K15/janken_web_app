@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,16 +15,17 @@
   <script type="text/javascript" src="./js/script.js"></script>
 </head>
 <body>
-  <h1>じゃんけん</h1>
-  
+<h1>Let's じゃんけん！！</h1>
   <form action="janken" method="post">
   <!-- 入力された名前をinput -->
   <label for="name">お名前:</label>
   <input type="text" id="name" name="name" required><br>
-  <!-- タイトル -->
-  <label for="name" id="title">この中からどれか1つ選択してね！</label><br>
+  <p>何人で遊びますか？</p>
+  <label for="name">PCプレイヤー:</label>
+  <input type=number id="pcpleyers" name="pcpleyers" max="10" required><br>
   
-  <!-- じゃんけんを1つだけ選択できるようにする -->
+    <!-- じゃんけんを1つだけ選択できるようにする -->
+  <p>この中からどれか1つ選択してね！</p>
   <section>
   <label for="name">グー<img src ="./img/rock.png"></label>
   <input type="radio" id="rock" name="janken" value="グー" required><br>
@@ -32,7 +34,8 @@
   <label for="name">パー<img src ="./img/paper.png"></label>
   <input type="radio" id="paper" name="janken" value="パー" required><br>
   </section>
-  <!-- 選択したら送信ボタンを表示 -->
+  
+    <!-- 選択したら送信ボタンを表示 -->
   <button type="submit" id="button" name="button">いざ勝負！</button>
   </form>
 </body>

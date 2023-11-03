@@ -11,11 +11,11 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class JamkenResultControl
  */
-@WebServlet("/confirm")
-public class JankenResultController extends HttpServlet {
+@WebServlet("/confirmjankenplayers")
+public class JankenPlayersResultController extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   // confirm.jsp にリダイレクト
-    String view = "/WEB-INF/views/confirm.jsp";
+    String view = "/WEB-INF/views/confirmjankenplayers.jsp";
     request.getRequestDispatcher(view).forward(request, response);
   }
     
