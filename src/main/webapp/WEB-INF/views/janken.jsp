@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>じゃんけん</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" håref="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Klee+One&family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,26 +14,27 @@
   <script type="text/javascript" src="./js/script.js"></script>
 </head>
 <body>
-  <h1>じゃんけん</h1>
+  <h1>じゃんけんゲーム</h1>
+   <form action="janken" method="post"><br>
+   
+   <label for="name" id="name">お名前:</label>
+   <input type="text" id="name" name="name" required><br>
+   
+   <p>COM何人と対戦しますか？</p><br>
+   <div class="players">
+   <label>COM：</label><input type="number" name="complayers" value="complayers" min="1" max="2">
+   </div>
   
-  <form action="janken" method="post">
-  <!-- 入力された名前をinput -->
-  <label for="name">お名前:</label>
-  <input type="text" id="name" name="name" required><br>
-  <!-- タイトル -->
-  <label for="name" id="title">この中からどれか1つ選択してね！</label><br>
-  
-  <!-- じゃんけんを1つだけ選択できるようにする -->
-  <section>
-  <label for="name">グー<img src ="./img/rock.png"></label>
-  <input type="radio" id="rock" name="janken" value="グー" required><br>
-  <label for="name">チョキ  <img src ="./img/scissors.png"></label>
-  <input type="radio" id="scissors" name="janken" value="チョキ" required><br>
-  <label for="name">パー<img src ="./img/paper.png"></label>
-  <input type="radio" id="paper" name="janken" value="パー" required><br>
-  </section>
-  <!-- 選択したら送信ボタンを表示 -->
-  <button type="submit" id="button" name="button">いざ勝負！</button>
-  </form>
+   <p>この中から選択してね！</p><br>
+   <div class="choice">
+    <img src="./img/rock.png">
+    <input type="radio" name="janken" value="グー" required>
+    <img src="./img/scissors.png">
+    <input type="radio" name="janken" value="チョキ" required>
+    <img src="./img/paper.png">
+    <input type="radio" name="janken" value="パー" required>
+    </div>
+    <input type="submit" value="じゃんけんする">
+    </form>
 </body>
 </html>

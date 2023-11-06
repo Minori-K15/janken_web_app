@@ -16,15 +16,21 @@
 </head>
 <body>
 <h1>勝負結果</h1>
-     <!-- <p>結果表示</p> -->
-    <p>${name}さんは<strong></strong></p>
+  <div class="result">
+    <p><strong>${name}さんの${result}</strong></p>
+    <p>${name}さんの手：${janken}</p>
+    <p>COM1:${firstComHand}</p>
+    <c:if test="${empty secondComHand}">
+    <p>COM2:${secondComHand}</p> 
+    </c:if>
     
-    <div class="result">
-    	<p><%= request.getParameter("name") %></p>
-    	<p>CPU${n}：${cpu_janken}</p>
-    </div>
-    
-    <!-- ホーム画面に戻る：history.go=2ページ前に戻る -->
-    <input type="button" value="もういちど" onclick="history.go(-2)">
-</body>
+    <c:forEach begin="1" end="3">
+    Hello!
+		</c:forEach>
+<%--     <c:forEach var="i" begin="0" end="${complayers-1}" step="1"> --%>
+<%--       <p>コンピュータ${i + 1}の手：${request.getAttribute(computerHand + i)}</p> --%>
+<%--       <p>結果：${request.getAttribute(result + i)}</p> --%>
+<!--     </c:forEach> -->
+  </div>
+  <input type="button" value="もう一度" onclick="history.go(-2)">
 </html>
