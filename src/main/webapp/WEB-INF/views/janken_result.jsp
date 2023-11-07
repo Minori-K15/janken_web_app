@@ -19,18 +19,17 @@
   <div class="result">
     <p><strong>${name}さんの${result}</strong></p>
     <p>${name}さんの手：${janken}</p>
+
+<%--     <c:forEach var="computerHand" items="${computerHands1}" varStatus="status"> --%>
+<%--     <p>COM${status.index + 1}の手：${computerHand}</p> --%>
+<%--     <p>結果：${results[status.index]}</p> --%>
+<!--     </c:forEach> -->
+    
     <p>COM1:${firstComHand}</p>
     <c:if test="${empty secondComHand}">
     <p>COM2:${secondComHand}</p> 
     </c:if>
-    
-    <c:forEach begin="1" end="3">
-    Hello!
-		</c:forEach>
-<%--     <c:forEach var="i" begin="0" end="${complayers-1}" step="1"> --%>
-<%--       <p>コンピュータ${i + 1}の手：${request.getAttribute(computerHand + i)}</p> --%>
-<%--       <p>結果：${request.getAttribute(result + i)}</p> --%>
-<!--     </c:forEach> -->
+
   </div>
   <input type="button" value="もう一度" onclick="history.go(-2)">
 </html>

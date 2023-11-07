@@ -33,7 +33,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     String[] computerHands;
     int numPlayers = Integer.parseInt(comPlayers);
     
-    // COMの人数に応じて呼び出しメゾットを切り替える
+    // COMの人数に応じて呼び出しメゾットを動かす
     if (numPlayers == 1) {
         computerHands = new String[]{getRandomHand()};
         getJankenResult( userHand, computerHands[0]);
@@ -46,17 +46,28 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
         out.print("Unsupported number of players");
         return;
     }
+    
     request.setAttribute("name", userName);
     request.setAttribute("janken", userHand);
     request.setAttribute("complayers", comPlayers);
     
-//    String computerHand = null ;
+//    // 配列処理で値を渡す
+//    String[] computerHands1 = new String[numPlayers];
+//    String[] results = new String[numPlayers];
+//
 //    for (int i = 0; i < numPlayers; i++) {
-//     computerHand = computerHands[i];
-//     request.setAttribute("computerHand", computerHand);
+//        String computerHand = computerHands1[i];
+//        String result = getJankenResult(userHand, computerHand);
+//        computerHands1[i] = computerHand;
+//        results[i] = result;
+//        System.out.println(computerHands1[i]);
+//        System.out.println(results[i]);
 //    }
-//    String result = getJankenResult(userHand, computerHand);
-//    request.setAttribute("result", result);
+//
+//
+//    request.setAttribute("computerHands", computerHands1);
+//    request.setAttribute("results", results);
+
     
     // 変数の初期化
     String firstComHand = null;
@@ -78,18 +89,22 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		request.setAttribute("result", result);
 	}
 	
-	// janken_result.jspにリダイレクト
+	// janken_result.jspにダイレクト
     RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/janken_result.jsp");
     dispatcher.forward(request, response);
 }
 
+// randomでCOMの手を設定
 private String getRandomHand() {
     String[] choices = {"グー", "チョキ", "パー"};
     return choices[new Random().nextInt(choices.length)];
 }
-// 二人対戦
+
+// 2人対戦
 private String getJankenResult(String prayer, String choice) {
-    if (prayer.equals(choice)) {
+    if (choice == null) {
+        return "[ERROR] playerもしくはCOMの手が入っていません";
+    } else if (prayer.equals(choice)) {
         return "引き分け";
     } else if ((prayer.equals("グー") && choice.equals("チョキ"))
             || (prayer.equals("チョキ") && choice.equals("パー"))
@@ -102,7 +117,9 @@ private String getJankenResult(String prayer, String choice) {
 
 // 3人対戦
 private String getJankensResult(String player, String choice1,  String choice2) {
-	if ((player.equals("グー") && choice1.equals("チョキ") && choice2.equals("チョキ"))
+    if (player == null || choice1 == null || choice2 == null) {
+        return "[ERROR] playerもしくはCOMの手が入っていません";
+    } else if ((player.equals("グー") && choice1.equals("チョキ") && choice2.equals("チョキ"))
 			|| (player.equals("グー") && choice1.equals("グー") && choice2.equals("チョキ"))
 			|| (player.equals("グー") && choice1.equals("チョキ") && choice2.equals("グー"))
 			|| (player.equals("チョキ") && choice1.equals("パー") && choice2.equals("パー"))
@@ -126,4 +143,5 @@ private String getJankensResult(String player, String choice1,  String choice2) 
 		return "引き分け";
 	}
    }
-}
+  }
+
